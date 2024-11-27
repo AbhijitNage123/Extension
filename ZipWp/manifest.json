@@ -4,15 +4,15 @@
 	"version": "1.0",
 	"description": "A Chrome extension for ZipWP",
 	"icons": {
-		"16": "zipwp-logo-dark.png",
-		"48": "zipwp-logo-dark.png",
-		"128": "zipwp-logo-dark.png"
+		"16": "updated-zipwp-logo.png",
+		"48": "updated-zipwp-logo.png",
+		"128": "updated-zipwp-logo.png"
 	},
 	"action": {
 		"default_icon": {
-			"16": "zipwp-logo-dark.png",
-			"48": "zipwp-logo-dark.png",
-			"128": "zipwp-logo-dark.png"
+			"16": "updated-zipwp-logo.png",
+			"48": "updated-zipwp-logo.png",
+			"128": "updated-zipwp-logo.png"
 		},
 		"default_popup": "popup.html",
 		"default_title": "ZipWP Extension"

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Token</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+		.container .note {
+			text-align: left;
+		}
+        .container > * {
+            margin-bottom: 15px; /* Equal space between elements */
+        }
+        .container > *:last-child {
+            margin-bottom: 0; /* Remove margin for the last element */
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        input {
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            margin-top: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+		.note {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .note a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .note a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 for="auth-token">Auth Token</h3>
+        <input type="text" id="auth-token" placeholder="Enter your token" />
+        <button id="submit-token">Submit</button>
+        <div id="status"></div>
+		<div class="note">
+            <p><strong>How to create a token:</strong></p>
+            <p>1. Login to your <a href="https://app.zipwp.com/login" target="_blank">ZipWP account</a>.</p>
+            <p>2. Go to <strong>My Profile</strong> > <strong>API Tokens</strong>.</p>
+            <p>3. Click <strong>New API Token</strong>, enter a token name, and click on <strong>Generate</strong>.</p>
+            <p>4. Copy the token and paste it in the <strong>Auth Token</strong> field.</p>
+        </div>
+    </div>
+    <script src="token.js"></script>
+</body>
+</html>

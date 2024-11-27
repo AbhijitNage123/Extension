@@ -1,61 +1,165 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZipWP Extension</title>
     <style>
-			:root{--orange: #fe7269;--white: #ffffff;--black: #000000;--dark: #25243e;--gray: #73728f;--light: #ececf2;--background-light: #f5f5f6;--background-linear-orange: linear-gradient(90deg, #f68452 0%, #ff5b51 100%)}*{margin:0;padding:0;box-sizing:border-box;font-family:"Montserrat",sans-serif;text-decoration:none}.container{width:316px;display:flex;flex-direction:column;align-items:center}.container-header{width:316px;display:flex;border-radius:0 0 10px 10px;background-color:#ececf2;box-shadow:0 5px 25px rgba(45,34,60,.07)}.container-header-content{width:233px;display:flex}.container-header-content>.wordpress-logo{margin-left:41px;margin-top:16px;margin-bottom:16px}.container-header-content>.text{width:183px;margin-left:10px}.container-header-content>.text>h4{margin-top:12px;margin-bottom:12px;margin-right:42px;font-style:normal;font-weight:600;font-size:16px;line-height:150%;width:183px;height:48px;color:var(--dark)}.container-body{margin-top:10px;width:286px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0px 10px 50px rgba(45,34,60,.12);border-radius:10px}.create-new{width:286px;background-color:var(--white);border-radius:10px;display:flex;align-items:center;flex-direction:column;padding:15px 25px 20px 25px;gap:10px}.create-new>.title{font-style:normal;font-weight:600;font-size:14px;line-height:17px}.create-new>.btn-default-settings{margin-bottom:10px}.btn{display:flex;flex-direction:row;align-items:center;justify-content:center;border-radius:60px;width:236px;height:54px;color:#fff;font-style:normal;font-weight:700;font-size:16px;line-height:120%;cursor:pointer}.btn-default-settings{background:linear-gradient(90deg, #ff5b51 0%, #f68452 100%);position:relative;-webkit-backface-visibility:hidden;z-index:1;align-items:flex-start;justify-content:start}.btn-default-settings::before{content:"";width:100%;position:absolute;height:100%;top:0;background:linear-gradient(122.13deg, #f68452 19.29%, #ff5b51 79.75%);left:0;border-radius:60px;opacity:0;z-index:0;transition:.3s all}.btn-default-settings>#text{margin-left:50px;margin-top:17px;z-index:99999}.btn-default-settings:hover::before{opacity:1}.btn-advanced-options{display:flex;justify-content:start;align-items:flex-start;color:var(--dark);border-radius:60px;border:double 1px rgba(0,0,0,0);background-image:linear-gradient(white, white),linear-gradient(180deg, rgba(255, 91, 81, 0.4) 0%, rgba(246, 132, 82, 0.4) 100%);background-origin:border-box;background-clip:content-box,border-box}.btn-advanced-options>img{margin-right:10px;margin-left:18px;margin-top:14px}.btn-advanced-options>#text{margin-top:17px;font-family:"Montserrat";font-style:normal;font-weight:700;font-size:16px;line-height:120%;display:flex;align-items:center;color:#25243e}.btn-advanced-options:hover{box-shadow:0px 5px 23px rgba(12,0,33,.14);border:1px solid;border-image-source:linear-gradient(180deg, rgba(255, 91, 81, 0.4) 0%, rgba(246, 132, 82, 0.4) 100%)}.powered-by{margin-bottom:10px;margin-top:10px;width:144.62px;height:23px;display:flex;align-items:flex-end;justify-content:center;color:var(--gray);font-style:normal;font-weight:400;font-size:13px;line-height:130%;text-align:center;color:#73728f}.logo{width:63.57px;height:22.28px;margin-left:4px}.logo:hover>.logo-normal{display:none;}.logo:hover>.logo-hover{display:block}.logo-normal{display:block;width: 50px; height: 34px;}.logo-hover{display:none;width: 50px; height: 34px;}.try-this-plugin{position:relative;width:296px;height:82.8px;margin:13.6px 10px 3.6px 10px;display:flex;background:linear-gradient(287.04deg, #603bbc 43.57%, #30057b 85.63%);box-shadow:0px 10.3497px 67.2727px rgba(0,0,0,.07);border-radius:10.3497px}.try-this-plugin>img{margin:15.52px 7.24px 0px 15.52px}.try-this-plugin-title{width:150px}.try-this-plugin-title>img{margin-top:16.56px}.try-this-plugin-title-logo{position:relative}.try-this-plugin-title-logo>span{position:absolute;top:0px;left:16px}.try-this-plugin>.arrow-wrapper{position:absolute;right:0;top:0;margin-right:10px;margin-top:21.4px}.arrow-circle{width:40px;height:40px;background:#fff;opacity:.1;cursor:pointer;border-radius:50%;transition:all .3s ease-in-out}.arrow-wrapper{position:relative}.arrow{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);cursor:pointer}.arrow-wrapper:hover .arrow-circle{opacity:.2}.wordpress{width:540px;display:flex;flex-direction:column;align-items:center;justify-content:center}.wordpress-header{box-shadow:0px 5px 25px rgba(45,34,60,.07);display:flex;align-items:center;justify-content:center;background-color:#fff;height:40px;border-radius:10px;width:100%}.wordpress-header p{width:280px}.wordpress>.hero{display:flex;gap:6px;align-items:center;justify-content:center;margin-top:10px}.wordpress>.hero>.selectbox{margin-right:6px;height:40px;width:252px}.wordpress>.body{box-shadow:0px 10px 50px rgba(45,34,60,.12);width:510px;height:100px;display:flex;flex-direction:column;align-items:center;background-color:#fff;margin-top:15px;border-radius:10px}.wordpress>.body>.title{margin-top:8px;margin-bottom:8px;font-style:normal;font-weight:600;font-size:14px;line-height:17px;text-align:center;color:var(--dark)}.wordpress>.body>.buttons{display:flex;gap:10px;height:70px}.wordpress-header{font-style:normal;font-weight:600;font-size:16px;line-height:150%}.wordpress-header>img{margin-right:10px}.themes{display:none;position:relative}.theme-wrapper{width:505px;border-radius:10px;margin-top:10px}.theme-wrapper h3{font-style:normal;font-weight:600;font-size:16px;line-height:150%;color:var(--dark)}.theme-wrapper span{font-style:normal;font-weight:400;font-size:16px;line-height:150%}.theme-wrapper a{font-style:normal;font-weight:600;font-size:16px;line-height:150%;color:#00cfdd;text-decoration:none}.theme-wrapper:first-child{margin-top:0px}button{text-align:left}.scroll-wrapper{overflow-x:hidden;overflow-y:auto;max-height:342px;padding-left:15px;margin-right:9px;margin-top:10px}.plugins{position:relative;display:none;width:540px}.blur{z-index:2;position:absolute;background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 91.11%);width:540px;height:45px}.blur-down{left:0;bottom:0}.blur-up{right:0;top:0;transform:matrix(1, 0, 0, -1, 0, 0)}.blur-theme{z-index:2;position:absolute;background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 91.11%);width:540px;height:45px}.blur-theme-down{left:0;bottom:0}.blur-theme-up{right:0;top:0;transform:matrix(1, 0, 0, -1, 0, 0)}.plugin-wrapper{padding-right:8px;border:1px solid rgba(55,0,121,.11);border-radius:10px;position:relative;width:500px;height:85px;margin-bottom:5px}.plugin-body{align-items:center;display:flex;overflow:hidden;margin:7px 0 0 7px}#plugin-icon{display:flex;padding-right:7px}.plugin-type{position:absolute;width:40px;height:22px;background-color:rgba(0,205,219,.1);border-radius:0 9px 0 6px;color:#00cfdd;right:0;top:0;display:flex;align-items:center;justify-content:center}.plugin-type span{font-style:normal;font-weight:900;font-size:11px;line-height:130%}.plugin-title h3{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:395px;height:24px;font-style:normal;font-weight:600;font-size:15px;line-height:150%;color:var(--dark)}.plugin-desc{height:21px;font-style:normal;font-weight:400;font-size:14px;line-height:150%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:425px}.plugin-desc h1,.plugin-desc h2,.plugin-desc h3,.plugin-desc h4,.plugin-desc h5,.plugin-desc h6,.plugin-desc p,.plugin-desc span,.plugin-desc div{font-style:normal;font-weight:400;font-size:14px;line-height:150%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:425px}.plugin-body{height:45px}.plugin-footer{display:flex;align-items:center;justify-content:space-between;padding-left:7px;margin-top:2px}.plugin-footer img{margin-right:5px}.plugin-footer-author{justify-content:start !important;padding-right:7px}.plugin-footer-author>span{white-space:nowrap;overflow:hidden;display:inline-block;text-overflow:ellipsis;max-width:186px}.plugin-footer-btn{min-height:27px;transition:all .3s ease-in-out;cursor:pointer;border-radius:5px;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:400;font-size:13px;line-height:150%;color:#73728f}.plugin-footer-btn img{margin-left:7px}.plugin-footer-btn a{color:var(--gray)}.plugin-footer-btn:hover{background-color:var(--light)}.plugin-footer-btn:hover a{color:var(--dark)}.plugin-footer-group{display:flex;align-items:center;justify-content:space-between;gap:1px}.plugin-footer-homepage>a{width:151px;display:flex;align-items:center}.plugin-footer-try{font-style:normal;font-weight:700;font-size:14px;line-height:150%;width:110px;color:#fe7269}.plugin-footer-try>img{margin-right:5px}.plugin-footer-try:hover{background-color:rgba(254,114,105,.15)}.plugin-footer-try>span{width:75px}.refresh-wrapper{display:flex;align-items:center;justify-content:center;flex-direction:column;width:510px;height:200px}.dropbtn{padding-left:15px;height:40px;width:252px;border:none;cursor:pointer;position:relative;background:linear-gradient(46.4deg, rgba(109, 64, 187, 0.1) 0%, rgba(165, 96, 215, 0.1) 102.56%);border-radius:8px;font-style:normal;font-weight:600;font-size:16px;line-height:20px;color:var(--dark)}.dropbtn img{right:0;top:0;margin-top:12px;margin-right:10px;position:absolute}.dropbtn:hover{background:linear-gradient(46.4deg, rgba(109, 64, 187, 0.3) 0%, rgba(165, 96, 215, 0.3) 102.56%)}.dropdown{display:inline-block}.dropdown-content{display:none;z-index:1}.dropdown-content a{color:#000;padding:12px 16px;text-decoration:none;display:block;background-color:#ddd}.t-orange{color:var(--orange)}::-webkit-scrollbar{width:6px;margin-right:10px;top:10%;right:-150px}::-webkit-scrollbar-track{background:#ededf7;margin:5px 30px;border-radius:10px}::-webkit-scrollbar-thumb{background:linear-gradient(46.4deg, #6d40bb 0%, #a560d7 102.56%);border-radius:10px}::-webkit-scrollbar-thumb:hover{background:linear-gradient(46.4deg, #6532bd 0%, #a054d7 102.56%)}.loader{position:relative;height:28.76px;width:122.58px}.loader-wrapper{width:310px;height:230px;padding-top:40px}.loader-wrapper>.text{margin-bottom:56px;font-style:normal;font-weight:600;font-size:22px;line-height:27px;text-align:center}.loader-star{position:absolute;top:calc(50% - 12px)}.loader-9{margin:auto}.loader-9>.star1{-webkit-animation:stars-pulse 1s ease-in-out infinite;animation:stars-pulse 1s ease-in-out infinite;left:0}.loader-9>.star2{-webkit-animation:stars-pulse 1s .2s ease-in-out infinite;animation:stars-pulse 1s .2s ease-in-out infinite;left:45px}.loader-9>.star3{-webkit-animation:stars-pulse 1s .4s ease-in-out infinite;animation:stars-pulse 1s .4s ease-in-out infinite;left:90px}@-webkit-keyframes stars-pulse{0%,100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}80%{-webkit-transform:scale(0);transform:scale(0);opacity:0}}@keyframes stars-pulse{0%,100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}80%{-webkit-transform:scale(0);transform:scale(0);opacity:0}}.with-tooltip{position:relative}.with-tooltip::before{right:-5px;top:35px;content:attr(data-tooltip-content);width:160px;height:43px;padding-top:9px;padding-left:10px;background-color:var(--dark);border-radius:8px;position:absolute;color:#fff;opacity:0;z-index:4;font-style:normal;font-weight:400;font-size:14px;line-height:17px;visibility:hidden;transition:visibility,opacity 200ms;display:none}.with-tooltip:hover::before{visibility:visible;opacity:1;display:block}.last-tooltip::before{top:-55px}.cursor-pointer{cursor:pointer}
-	</style>
-  </head>
-  <body>
-	<div>
-   		<div class="container">
-			<div class="container-header" style="background-color: white;">
-				<div class="container-header-content">
-					<img class="wordpress-logo" src="/images/wordpress.svg" width="40" height="40" alt="logo">
-					<div class="text">
-					<h4>This site doesn't seem to use WordPress</h4>
-					</div>
-				</div>
-			</div>
-  
-			<div class="container-body">
-				<div class="create-new">
-					<h3 class="title">Want to try out ZipWP?</h3>
-				
-					<a class="advanced-options-link1" href="https://try.new" id="create-new-btn">
-						<div class="btn btn-advanced-options border-gradient border-gradient-purple">
-							<img width="26" height="26" src="/images/rocket.svg" class="settings">
-							<span id="text">Create an new site !</span>
-						</div>
-					</a>
-					
-					<a class="advanced-options-link2" href="https://app.zipwp.com/login" id="login-btn">
-						<div class="btn btn-advanced-options border-gradient border-gradient-purple">
-							<img width="26" height="26" src="/images/login.svg" class="settings">
-							<span id="text">Login to account</span>
-						</div>
-					</a>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            background-color: #f9f9f9;
+            width: 300px;
+            text-align: center;
+			background-image: linear-gradient(to right, #ea1171, #ea1171), url('her-section-bg-gradient.png');
+        }
+        .container-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+			background-color: white;
+			padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            width: 100%;
+            justify-content: center; /* Align buttons side by side */
+        }
+        button {
+            width: 45%; /* Adjust width so both buttons fit side by side */
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        button#create-new-btn, button#restore {
+			background-color: #ffffff;
+            color: #000000;
+			border-style: solid;
+			border-color: #b809a7;
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+			border-left-width: 1px;
+			border-right-width: 1px;
+        }
+        button#login-btn, button#redirect-btn {
+            background: linear-gradient(90deg, rgb(184, 9, 167) 0%, rgb(233, 11, 118) 48%, rgb(252, 133, 54) 100%);
+            color: #ffffff;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .top-bar {
+            position: fixed;
+            top: 4px;
+            right: 28px;
+        }
+        .top-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+		/* General table styling */
+		#site-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
 
-					<a class="advanced-options-link3" href="https://app.zipwp.com/register" id="new-account-btn">
-						<div class="btn btn-advanced-options border-gradient border-gradient-purple">
-							<img width="26" height="26" src="/images/settings.svg" class="settings">
-							<span id="text">Create an account</span>
-						</div>
-					</a>
-				</div>
-			</div>
-  
-			<div class="powered-by">
-				<p>Powered by</p>
-				<a class="logo-link">
-					<div class="logo">
-					<img class="logo-normal cursor-pointer" src="/images/zipwp-logo-dark.svg">
-					<img class="logo-hover cursor-pointer" src="/images/zipwp-logo-dark.svg">
-					</div>
-				</a>
-			</div>
-  		</div>
+		/* Header styling */
+		#site-table th {
+			border-style: solid;
+			border-color: #b809a7;
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+			border-left-width: 1px;
+			border-right-width: 1px;
+			background-color: #ffffff;
+			color: #000000;
+			text-align: left;
+			padding: 12px 15px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+	/* Table cell styling */
+	#site-table td {
+		padding: 12px 15px;
+		border-style: solid;
+		border-color: #b809a7;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		border-left-width: 1px;
+		border-right-width: 1px;
+		text-align: left;
+		font-size: 14px;
+		color: #333;
+	}
+
+	/* Alternating row colors */
+	/* #site-table tr:nth-child(even) {
+		background-color: #f9f9f9;
+	} */
+
+	/* Hover effect for table rows */
+	#site-table tr {
+		background-color: #ffffff;
+	}
+    </style>
+</head>
+<body>
+	<div class="top-bar">
+        <span id="slug">
+			<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="logo-small.svg">
+		</span>
     </div>
-	<script src="popup.js"></script>
-  </body>
+	<div class="container-info">
+		<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="updated-zipwp-logo.svg">
+		<h1>ZipWP Extension</h1>
+		<p>Welcome to ZipWP extension! Create a new test site or log in to your account.</p>
+		<div class="button-container">
+			<button id="create-new-btn">Test Site</button>
+			<button id="login-btn">Login</button>
+		</div>
+	</div>
+	<div class="data-container">
+        <table id="site-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Redirect URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here -->
+				 <!-- <tr>
+					<td>
+
+					</td>
+					<td>
+						<div class="button-container">
+							<button id="restore" disabled>Restore</button>
+							<button id="redirect-btn">Login</button>
+						</div>
+					</td>
+				</tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script src="popup.js"></script>
+</body>
 </html>
