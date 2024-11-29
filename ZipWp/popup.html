@@ -5,39 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZipWP Extension</title>
     <style>
-        body {
+        body#zipwp-ext-popup {
             font-family: Arial, sans-serif;
             padding: 20px;
             margin: 0;
             background-color: #f9f9f9;
             width: 300px;
             text-align: center;
-			background-image: linear-gradient(to right, #ea1171, #ea1171), url('her-section-bg-gradient.png');
         }
+
         .container-info {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-			background-color: white;
 			padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			background-image: linear-gradient(to right, #ea1171, #ea1171), url('her-section-bg-gradient.png');
         }
+
         h1 {
+			color: white;
             font-size: 18px;
         }
-        p {
+
+        p#description {
             font-size: 14px;
-            color: #555;
+            color: white;
+			margin-top: 0px;
             margin-bottom: 20px;
         }
+
         .button-container {
             display: flex;
             gap: 10px; /* Space between buttons */
             width: 100%;
             justify-content: center; /* Align buttons side by side */
         }
+
         button {
             width: 45%; /* Adjust width so both buttons fit side by side */
             padding: 10px;
@@ -46,6 +52,7 @@
             cursor: pointer;
             border: none;
         }
+
         button#create-new-btn, button#restore {
 			background-color: #ffffff;
             color: #000000;
@@ -56,110 +63,161 @@
 			border-left-width: 1px;
 			border-right-width: 1px;
         }
+
         button#login-btn, button#redirect-btn {
             background: linear-gradient(90deg, rgb(184, 9, 167) 0%, rgb(233, 11, 118) 48%, rgb(252, 133, 54) 100%);
             color: #ffffff;
         }
+
         button:hover {
             opacity: 0.9;
         }
-        .top-bar {
+
+        /* .top-bar {
             position: fixed;
             top: 4px;
             right: 28px;
-        }
-        .top-bar img {
+        } */
+
+        .top-bar img, #user {
             width: 40px;
             height: 40px;
             border-radius: 50%;
         }
+
 		/* General table styling */
 		#site-table {
 			width: 100%;
 			border-collapse: collapse;
-			margin-top: 20px;
 		}
 
 		/* Header styling */
 		#site-table th {
 			border-style: solid;
-			border-color: #b809a7;
+			border-color: rgb(61 69 146);
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			border-left-width: 1px;
 			border-right-width: 1px;
-			background-color: #ffffff;
-			color: #000000;
-			text-align: left;
+			/* background-color: #ffffff; */
+			color: #ffffff;
+			text-align: center;
 			padding: 12px 15px;
-			font-size: 16px;
-			font-weight: bold;
+			/* font-size: 16px;
+			font-weight: bold; */
 		}
 
-	/* Table cell styling */
-	#site-table td {
-		padding: 12px 15px;
-		border-style: solid;
-		border-color: #b809a7;
-		border-top-width: 1px;
-		border-bottom-width: 1px;
-		border-left-width: 1px;
-		border-right-width: 1px;
-		text-align: left;
-		font-size: 14px;
-		color: #333;
-	}
+		/* Table cell styling */
+		#site-table td {
+			padding: 12px 15px;
+			border-style: solid;
+			border-color: rgb(61 69 146);
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+			border-left-width: 1px;
+			border-right-width: 1px;
+			text-align: center;
+			font-size: 14px;
+			color: #333;
+		}
 
-	/* Alternating row colors */
-	/* #site-table tr:nth-child(even) {
-		background-color: #f9f9f9;
-	} */
+		/* #site-table tr {
+			background-color: #ffffff;
+		} */
 
-	/* Hover effect for table rows */
-	#site-table tr {
-		background-color: #ffffff;
-	}
+		.data-container {
+			width: 100%;
+			display: flex;
+		}
+
+		input#auth-token {
+            border: 1px solid #ccc;
+			padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+		input#auth-token:focus-visible{
+			outline: none;
+		}
+
+        button#submit-token {
+			padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+			width: 100%;
+            background: linear-gradient(90deg, rgb(184, 9, 167) 0%, rgb(233, 11, 118) 48%, rgb(252, 133, 54) 100%);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+		.note {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 0px;
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+        }
+        .note a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .note a:hover {
+            text-decoration: underline;
+        }
+		.note p {
+			margin: 2px;
+		}
+		
+		button#login-to-site {
+			width: unset;
+			font-size: unset;
+			padding: 5px 10px;
+			margin: 0 5px;
+			color: rgb(61 69 146);
+			cursor: pointer;
+			border: 1px solid rgb(61 69 146);
+			background-color: #fff;
+		}
+		.plan-info {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			margin-top: 20px;
+		}
+
+		.badge {
+			font-family: Arial, sans-serif;
+			display: inline-block;
+			background-color: #ffffff;
+			color: rgb(61 69 146);
+			border-radius: 2px;
+			border-style: solid;
+			border-color: rgb(61 69 146);
+			padding: 5px 10px;
+			font-size: 12px;
+			font-weight: bold;
+		}
     </style>
 </head>
-<body>
-	<div class="top-bar">
-        <span id="slug">
-			<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="logo-small.svg">
-		</span>
-    </div>
+<body id="zipwp-ext-popup">
+	
 	<div class="container-info">
-		<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="updated-zipwp-logo.svg">
-		<h1>ZipWP Extension</h1>
-		<p>Welcome to ZipWP extension! Create a new test site or log in to your account.</p>
+		<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="images/logo-small.svg">
+		<!-- <div class="top-bar">
+        <span id="slug">
+			<img alt="User" width="32" height="32" id="user" class="rounded-sm" referrerpolicy="no-referrer" src="images/logo-small.svg">
+		</span>
+    </div> -->
+		<h1 id="name">ZipWP Extension</h1>
+		<p id="description">Begin your website journey without any design or coding skills.</p>
 		<div class="button-container">
 			<button id="create-new-btn">Test Site</button>
 			<button id="login-btn">Login</button>
 		</div>
+		<div class="data-container"></div>
 	</div>
-	<div class="data-container">
-        <table id="site-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Redirect URL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dynamic rows will be added here -->
-				 <!-- <tr>
-					<td>
-
-					</td>
-					<td>
-						<div class="button-container">
-							<button id="restore" disabled>Restore</button>
-							<button id="redirect-btn">Login</button>
-						</div>
-					</td>
-				</tr> -->
-            </tbody>
-        </table>
-    </div>
     <script src="popup.js"></script>
 </body>
 </html>
