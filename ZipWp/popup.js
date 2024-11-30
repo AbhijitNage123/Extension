@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			const noteContent = `
 			<p><strong>How to create an API token:</strong></p>
-			<p>1. Login to your <a href="https://app.zipwp.com/login" target="_blank">ZipWP account</a>.</p>
+			<p>1. Login to your <a id="login-link" href="https://app.zipwp.com/login" target="_blank">ZipWP account</a>.</p>
 			<p>2. Go to <strong>My Profile</strong> > <strong>API Tokens</strong>.</p>
 			<p>3. Click <strong>New API Token</strong>, enter a token name, and click on <strong>Generate</strong>.</p>
 			<p>4. Copy the token and paste it in the <strong>API Token</strong> field.</p>`;
@@ -183,12 +183,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const badgeLimit = document.createElement('span');
 		badgeLimit.id = 'limit';
 		badgeLimit.className = 'badge';
+		// Status Div
+		const badgeLogout = document.createElement('span');
+		badgeLogout.id = 'logout';
+		badgeLogout.className = 'badge';
 		// Append elements to the token container
 		planInfo.appendChild(badgePlan);
 		planInfo.appendChild(badgeLimit);
+		planInfo.appendChild(badgeLogout);
 		infoContainer.appendChild(planInfo);
 		document.getElementById('plan-type').textContent = 'Plan: ' +parsedUserDataWithPlans.user.active_plan.name;
 		document.getElementById('limit').textContent = 'Limit: ' + parsedUserDataWithPlans.user.plan_data.limit.all_sites_count;
+		document.getElementById('logout').textContent = 'Log-out';
+		document.getElementById('logout').addEventListener('click', () => {
+			localStorage.clear();
+		});
 		document.getElementById('user').src = parsedUserData.members[0].avatar;
 	}
 	// Retrieve the user sites data from localStorage.
